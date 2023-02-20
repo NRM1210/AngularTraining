@@ -1,0 +1,29 @@
+<div>
+    <input type="checkbox" (change)="toggleCities()">{{toggleMsg}}
+    <h1>{{title}}</h1>
+    <ul class="list-group" *ngIf="showCities">
+      <li class="list-group-item" *ngFor="let city of cities" (click)="showCity(city)">{{city.name}}</li>
+    </ul>
+    <h2 *ngIf="showCities">Jij hebt veel favoriete steden!</h2>
+    <!-- <button (click)="btnClick()">Bestel</button> -->
+</div>
+<div>
+    <input type="text" class="input-lg" placeholder="Nieuwe stad..." #txtCity (keyup.enter)="addCity(txtCity.value)">
+    <button class="btn btn-succes" (click)="addCity(txtCity.value)">Toevoegen</button>
+    <br/>
+    <h2>{{ newCity }}</h2>
+</div>
+<!-- <div [hidden]="true">...</div>
+<div [style.background-color]="'yellow'">...</div>
+ <img [alt]="myAltText()".../> -->
+<!-- <h2 [innerHtml]="'Hello world'"></h2>
+<button class="btn btn-succes" (click)="toggleText()">Toggle onderstaande tekst</button>
+<h2 [hidden]="textVisible">Deze tekst is zichtbaar of onzichtbaar</h2> --> -->
+
+<div *ngIf="currentCity">
+    <img [src]="cityPhoto" [alt]="currentCity.name" class="cityPhoto">
+    <h2>Gekozen stad: {{currentCity.name}}</h2>
+</div>
+
+<!-- <input type="text" [(ngModel)]="newCity" class="form-control-lg">
+<button (click)="addCity()" class="btn btn-success">Stad toevoegen</button> -->

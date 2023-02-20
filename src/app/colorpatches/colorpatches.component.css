@@ -1,0 +1,11 @@
+.colorpatch{
+    width: 128px;
+    height: 128px;
+    border: 1px solid grey;
+    margin: 10px;
+}
+
+.patchContainer{
+    display: flex;
+    flex-wrap: wrap;
+}

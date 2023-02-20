@@ -1,0 +1,8 @@
+<p>colorpatches works now!</p>
+{{currentPatch | colorToString}}
+{{ rgba }}
+<div class="colorpatch" [style.background-color]="rgba"></div>
+<div *ngIf="currentPatch" class="patchContainer">
+    <app-colorpatch *ngFor="let thisPatch of patchArray" [patch]="thisPatch" (update)="updateColor($event)"></app-colorpatch>
+</div>
+
